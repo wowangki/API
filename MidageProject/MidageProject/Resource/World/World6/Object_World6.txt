@@ -1,0 +1,213 @@
+NAME	IDX	IDY	OFFSETX	OFFSETY	FRAMEX	FRAMEY	TYPE	KIND	TYPENAME	OBJECTKIND	MONPROPERTIES
+지로움	5	2	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	6	2	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	6	3	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	8	4	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	9	5	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	10	5	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	20	4	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	28	6	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	37	3	64.000000	57.000000	2	0	11	0	class Actor *	1	0
+지로움	47	2	64.000000	57.000000	2	0	11	0	class Actor *	1	0
+지로움	42	6	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	43	9	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	33	7	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	33	16	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	54	7	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	56	10	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	60	6	64.000000	57.000000	1	0	11	0	class Actor *	1	0
+지로움	60	5	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	61	3	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	59	27	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	60	33	64.000000	57.000000	2	0	11	0	class Actor *	1	0
+지로움	59	35	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	60	40	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	62	47	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	61	51	64.000000	57.000000	1	0	11	0	class Actor *	1	0
+지로움	61	52	64.000000	57.000000	0	0	11	0	class Actor *	1	0
+지로움	57	52	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	58	57	64.000000	57.000000	3	0	11	0	class Actor *	1	0
+지로움	56	62	64.000000	57.000000	1	0	11	0	class Actor *	1	0
+지로움	53	61	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	49	53	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	41	54	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+지로움	40	58	64.000000	57.000000	2	0	11	0	class Actor *	1	0
+지로움	29	54	64.000000	57.000000	1	0	11	0	class Actor *	1	0
+지로움	33	59	64.000000	57.000000	4	0	11	0	class Actor *	1	0
+카로움	33	58	64.000000	57.000000	3	0	11	0	class Actor *	1	3
+카로움	33	57	64.000000	57.000000	3	0	11	0	class Actor *	1	3
+카로움	29	57	64.000000	57.000000	1	0	11	0	class Actor *	1	3
+카로움	27	58	64.000000	57.000000	4	0	11	0	class Actor *	1	3
+카로움	17	54	64.000000	57.000000	4	0	11	0	class Actor *	1	3
+카로움	14	57	64.000000	57.000000	2	0	11	0	class Actor *	1	3
+카로움	13	60	64.000000	57.000000	4	0	11	0	class Actor *	1	3
+카로움	6	58	64.000000	57.000000	4	0	11	0	class Actor *	1	3
+카로움	3	59	64.000000	57.000000	3	0	11	0	class Actor *	1	3
+카로움	3	58	64.000000	57.000000	2	0	11	0	class Actor *	1	3
+카로움	3	52	64.000000	57.000000	1	0	11	0	class Actor *	1	3
+카로움	9	53	64.000000	57.000000	4	0	11	0	class Actor *	1	3
+프로칸	18	50	64.000000	57.000000	4	0	12	0	class Actor *	1	3
+프로칸	23	54	64.000000	57.000000	3	0	12	0	class Actor *	1	3
+프로칸	24	54	64.000000	57.000000	2	0	12	0	class Actor *	1	3
+프로칸	23	50	64.000000	57.000000	0	0	12	0	class Actor *	1	3
+프로칸	20	58	64.000000	57.000000	2	0	12	0	class Actor *	1	3
+프로칸	35	50	64.000000	57.000000	3	0	12	0	class Actor *	1	3
+프로칸	43	47	64.000000	57.000000	1	0	12	0	class Actor *	1	3
+프로칸	53	54	64.000000	57.000000	1	0	12	0	class Actor *	1	3
+프로칸	46	59	64.000000	57.000000	4	0	12	0	class Actor *	1	3
+프로칸	50	43	64.000000	57.000000	3	0	12	0	class Actor *	1	3
+프로칸	46	38	64.000000	57.000000	0	0	12	0	class Actor *	1	3
+프로칸	35	35	64.000000	57.000000	0	0	12	0	class Actor *	1	3
+프로칸	27	36	64.000000	57.000000	3	0	12	0	class Actor *	1	3
+프로칸	22	36	64.000000	57.000000	1	0	12	0	class Actor *	1	3
+프로칸	15	37	64.000000	57.000000	0	0	12	0	class Actor *	1	3
+프로칸	10	38	64.000000	57.000000	3	0	12	0	class Actor *	1	3
+프로칸	10	43	64.000000	57.000000	1	0	12	0	class Actor *	1	3
+프로칸	6	43	64.000000	57.000000	4	0	12	0	class Actor *	1	3
+프로칸	5	31	64.000000	57.000000	4	0	12	0	class Actor *	1	3
+프로칸	15	15	64.000000	57.000000	4	0	12	0	class Actor *	1	3
+프로칸	25	15	64.000000	57.000000	3	0	12	0	class Actor *	1	3
+프로칸	27	20	64.000000	57.000000	1	0	12	0	class Actor *	1	3
+프로칸	26	20	64.000000	57.000000	1	0	12	0	class Actor *	1	3
+지우르	32	18	64.000000	57.000000	4	0	1	0	class Actor *	1	0
+지우르	31	23	64.000000	57.000000	4	0	1	0	class Actor *	1	0
+지우르	20	19	64.000000	57.000000	4	0	1	0	class Actor *	1	0
+지우르	14	32	64.000000	57.000000	4	0	1	0	class Actor *	1	0
+지우르	22	31	64.000000	57.000000	2	0	1	0	class Actor *	1	0
+지우르	26	35	64.000000	57.000000	0	0	1	0	class Actor *	1	0
+지우르	27	39	64.000000	57.000000	3	0	1	0	class Actor *	1	0
+지우르	10	40	64.000000	57.000000	0	0	1	0	class Actor *	1	0
+지우르	19	43	64.000000	57.000000	0	0	1	0	class Actor *	1	0
+지우르	31	43	64.000000	57.000000	3	0	1	0	class Actor *	1	0
+지우르	41	42	64.000000	57.000000	3	0	1	0	class Actor *	1	0
+지우르	52	39	64.000000	57.000000	1	0	1	0	class Actor *	1	0
+지우르	45	28	64.000000	57.000000	2	0	1	0	class Actor *	1	0
+지우르	52	21	64.000000	57.000000	3	0	1	0	class Actor *	1	0
+지우르	56	34	64.000000	57.000000	2	0	1	0	class Actor *	1	0
+지우르	49	7	64.000000	57.000000	1	0	1	0	class Actor *	1	0
+지우르	42	12	64.000000	57.000000	1	0	1	0	class Actor *	1	0
+지우르	13	10	64.000000	57.000000	3	0	1	0	class Actor *	1	0
+지우르	10	10	64.000000	57.000000	2	0	1	0	class Actor *	1	0
+스콜	22	21	64.000000	57.000000	0	0	2	0	class Actor *	1	1
+스콜	34	32	64.000000	57.000000	0	0	2	0	class Actor *	1	1
+스콜	40	30	64.000000	57.000000	0	0	2	0	class Actor *	1	1
+스콜	49	31	64.000000	57.000000	0	0	2	0	class Actor *	1	1
+스콜	53	42	64.000000	57.000000	0	0	2	0	class Actor *	1	1
+게리	49	49	64.000000	57.000000	0	0	2	0	class Actor *	1	3
+게리	41	56	64.000000	57.000000	0	0	2	0	class Actor *	1	3
+게리	33	54	64.000000	57.000000	0	0	2	0	class Actor *	1	3
+게리	20	56	64.000000	57.000000	0	0	2	0	class Actor *	1	3
+게리	9	59	64.000000	57.000000	0	0	2	0	class Actor *	1	3
+게리	7	54	64.000000	57.000000	0	0	2	0	class Actor *	1	3
+지로로	19	32	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+지로로	13	28	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+지로로	16	20	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+지로로	35	19	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+지로로	47	23	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+지로로	58	6	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+지로로	22	7	64.000000	57.000000	0	0	4	0	class Actor *	1	0
+Tree_Needeled_High	5	23	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	5	24	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	6	25	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	6	26	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	6	27	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	6	28	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	7	28	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	3	36	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	3	37	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	4	37	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	4	38	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	5	38	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	5	39	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	6	39	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	6	40	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	7	41	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	3	43	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	3	44	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	3	45	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	4	46	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	4	47	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_High	5	47	64.000000	57.000000	0	0	0	1	class Matter *	1
+Tree_Needeled_Middle	14	45	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	15	45	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	15	44	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	16	44	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	25	43	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	26	43	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	27	43	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	27	44	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	28	44	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	34	42	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	35	42	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	36	42	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	37	42	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	37	43	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	26	31	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	27	31	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	28	32	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	29	33	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	30	34	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	45	32	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	46	32	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	46	33	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	47	33	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	47	34	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	48	35	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	49	36	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	55	36	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	55	37	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	55	38	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	56	39	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	56	40	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	57	41	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	57	42	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	57	43	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	58	43	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	50	22	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	51	23	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	52	24	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	53	25	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	53	26	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	54	26	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	54	27	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	54	28	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	57	21	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	58	22	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	59	23	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	59	24	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	60	24	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	17	12	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	18	12	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	18	13	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	19	14	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	20	14	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	20	15	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	21	16	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	22	16	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	22	17	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Low	4	4	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	4	5	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	5	5	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	5	6	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	6	6	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	7	7	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	8	8	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	9	8	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	27	18	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	28	18	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	29	18	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	29	19	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	30	19	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	38	14	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	39	14	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	40	14	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	40	15	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	41	15	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	42	15	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	48	10	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	48	11	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	49	11	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	50	11	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	51	12	64.000000	57.000000	2	0	2	1	class Matter *	1
+Tree_Needeled_Low	52	12	64.000000	57.000000	2	0	2	1	class Matter *	1
+/

@@ -1,0 +1,646 @@
+저장할 코드
+
+// 마우스 무브
+
+
+
+
+// CAM PIVOT RENDER
+	WCHAR str[256];
+
+	static TCHAR camText[] = L"X: %.2f\nY: %.2f";
+	_stprintf_s(str, camText, _CAM->x, _CAM->y);
+
+	_FONT->Render(str, FRectMakeCenter(WINSIZEX / 2, WINSIZEY / 2, 100, 100));
+
+
+// Increase Tile
+
+	for (int y = 0; y < tileSizeY; y++)
+	{
+		if (y != tileSizeY - 1)
+		{
+			TileClass* tTile = new TileClass({ y , tileSizeX - 1 }, "Tile_Autumn");
+
+			vMap[y].push_back(tTile);
+		}
+		else
+		{
+			vector<TileClass*> vTemp;
+			for (int x = 0; x < tileSizeX; x++)
+			{
+				TileClass* tTile = new TileClass({ y,x }, "Tile_Autumn");
+				vTemp.push_back(tTile);
+			}
+			vMap.push_back(vTemp);
+			vTemp.clear();
+		}
+	}
+
+	// Decrease Tile
+	if (vMap.size() == NULL) return;
+	tileSizeX--;
+	tileSizeY--;
+
+	for (UINT y = 0; y < vMap.size(); y++)
+	{
+		vMap[y].pop_back();
+	}
+	vMap.pop_back();
+
+	//Resize Tile
+	if (this->tileSizeX == tileSizeX && this->tileSizeY == tileSizeY) return;
+
+	while (tileSizeY != this->tileSizeY) {
+
+		if (tileSizeY > this->tileSizeY) {
+
+			IncreaseSize();
+			continue;
+		}
+
+		if (tileSizeY < this->tileSizeY) {
+
+			DecreaseSize();
+			continue;
+		}
+	}
+
+int x, y, preX, preY;
+	//상하
+	//frmae.y -> 0(아래), 1 (위)
+	//isRight -> false (좌), true (우)
+	if (frame.y == 0) x = 1;
+	else if (frame.y == 1) x = -1;
+
+	if (isRight) y = 1;
+	else y = -1;
+
+	preX = x;
+	preY = y;
+
+	//좌상 : x->증 y->감 / 연산 순서 : x, y / 초기값: x-> -1 y-> 1
+	//우상 : x->증 y->증 / 연산 순서 : y, x / 초기값: x-> -1 y-> -1
+	//좌하 : x->감 y->감 / 연산 순서 : y, x / 초기값: x-> 1 y-> 1
+	//우하 : x->감 y->증 / 연산 순서 : x, y / 초기값: x-> 1 y-> -1
+
+	if (preX == preY) {
+		while (true) 
+		{
+			x = preX;
+			if (isRight) {
+				if (y < -1) break;
+			}
+			else if (y > 1) break;
+
+			while (true)
+			{
+				if (frame.y == 0) {
+					if (x < -1) break;
+				}
+				else if (frame.y == 1) {
+					if (x > 1) break;
+				}
+
+				if (id.x + x < 0 || id.y + y < 0 ||
+					id.x + x > temp.size() - 1 ||
+					id.y + y > temp.size() - 1)
+				{
+					if (frame.y == 0) x--;
+					else if (frame.y == 1) x++;
+					continue;
+				}
+
+				if (ISOInISO(pos, rymPos, temp[id.y + y][id.x + x]->GetRymPos()))
+				{
+					id = temp[id.y + y][id.x + x]->GetId();
+					return;
+				}
+				
+				if (frame.y == 0) x--;
+				else if (frame.y == 1) x++;
+			}
+			if (isRight) y--;
+			else  y++;
+		}
+	}
+	else {
+		while (true)
+		{
+			y = preY;
+			if (frame.y == 0) {
+				if (x < -1) break;
+			}
+			else if (frame.y == 1) {
+				if (x > 1) break;
+			}
+
+			while (true)
+			{
+				if (isRight) {
+					if (y < -1) break;
+				}
+				else if (y > 1) break;
+
+				if (id.x + x < 0 || id.y + y < 0 ||
+					id.x + x > temp.size() - 1 ||
+					id.y + y > temp.size() - 1)
+				{
+					if (isRight) y--;
+					else if (y > 1) y++;
+					continue;
+				}
+
+				if (ISOInISO(pos, rymPos, temp[id.y + y][id.x + x]->GetRymPos()))
+				{
+					id = temp[id.y + y][id.x + x]->GetId();
+					return;
+				}
+
+				if (isRight) y--;
+				else y++;
+
+			}
+			if (frame.y == 0) x--;
+			else if (frame.y == 1) x++;
+		}
+	}
+
+	void Actor::StatusInit(int lv, int vital, int strength, int stamin, int dexterity)
+{
+	this->lv = lv;
+	this->exp = 0;
+	this->maxExp = 2 * (lv * 4);
+	this->vital = vital;
+	this->strength = strength;
+	this->stamin = stamin;
+	this->dexterity = dexterity;
+	SetMaxHp();
+	SetMaxMp();
+	this->hp = maxHp;
+	this->mp = maxMp;
+	SetAtk();
+	SetDef();
+	SetSpd();
+}
+
+void Actor::StatusSet(int lv, int exp, int hp, int mp, int vital, int strength, int stamin, int dexterity, int statPoint)
+{
+	this->lv = lv;
+	this->exp = exp;
+	this->maxExp = 2 * (lv * 4);
+	this->vital = vital;
+	this->strength = strength;
+	this->stamin = stamin;
+	this->dexterity = dexterity;
+	this->hp = hp;
+	this->mp = mp;
+	SetMaxHp();
+	SetMaxMp();
+	SetAtk();
+	SetDef();
+	SetSpd();
+	this->statPoint = statPoint;
+}
+
+
+void Data::SavePlayerPosition(Player * player, string FileSource)
+{
+	FILE* fp = nullptr;
+	fopen_s(&fp, FileSource.c_str(), "w+t");
+
+	char token = '\t';
+	char next = '\n';
+	char endToken = '/';
+
+	string temp;
+
+	temp = "NAME\tIDX\tIDY\tOFFSETX\tOFFSETY\tFRAMEX\tFRAMEY\tTYPE\tKIND\tTYPENAME\tOBJECTKIND\tWORLDINFONAME\tWORLDINFONUM\tTYPE\tLEVEL\tEXP\tMAXEXP\tHP\tMP\tEARTHP\tWATERP\tFIREP\tWINDP\tVITAL\tSTR\tSTA\tDEX\tPOINT\n";
+	fwrite(temp.c_str(), temp.size(), 1, fp);
+
+	temp = player->GetName() +
+		token + to_string(player->GetId().x) +
+		token + to_string(player->GetId().y) +
+		token + to_string(player->GetOffset().width) +
+		token + to_string(player->GetOffset().height) +
+		token + to_string(player->GetFrame().x) +
+		token + to_string(player->GetFrame().y) +
+		token + to_string(player->GetType()) +
+		token + to_string(player->GetKind()) +
+		token + typeid(player).name() +
+		token + to_string(player->GetActorKind()) +
+		token + player->GetWorldInfoName() +
+		token + to_string(player->GetWorldNum()) +
+		token + to_string(player->GetType()) +
+		token + to_string(player->GetLv()) +
+		token + to_string(player->GetExp()) +
+		token + to_string(player->GetMaxExp()) +
+		token + to_string(player->GetHp()) +
+		token + to_string(player->GetMp()) +
+		token + to_string(player->GetEarthPoint()) +
+		token + to_string(player->GetWaterPoint()) +
+		token + to_string(player->GetFirePoint()) +
+		token + to_string(player->GetWindPoint()) +
+		token + to_string(player->GetVital()) +
+		token + to_string(player->GetStrength()) +
+		token + to_string(player->GetStamin()) +
+		token + to_string(player->GetDexterity()) +
+		token + to_string(player->GetStatPoint()) + next;
+
+	fwrite(temp.c_str(), temp.size(), 1, fp);
+	fwrite(&endToken, sizeof endToken, 1, fp);
+	fclose(fp);
+}
+
+
+D2D_POINT_2L id = actor->GetId();
+	D2D_POINT_2F pos = actor->GetPos();
+	D2D_SIZE_F offset = actor->GetOffset();
+
+	int _x;
+	int _y;
+
+	for (int y = 0; y < size; y++)
+	{
+		_x = -y;
+		_y = (y + 1) - size;
+
+		vector<SearchIt> vStemp;
+		for (int x = 0; x < size; x++)
+		{
+			SearchIt temp;
+			temp.id.x = id.x + _x;
+			temp.id.y = id.y + _y;
+			temp.pos.x = pos.x + ((offset.width * 0.5f) * _x);
+			temp.pos.y = pos.y + ((offset.height * 0.27f) * _y);
+			RymBusPointMake(temp.pos, temp.rymPos, offset);
+			temp.isInISO = false;
+
+			vStemp.push_back(temp);
+			_x++;
+			_y++;
+		}
+		vMoveSearch.push_back(vStemp);
+		vStemp.clear();
+	}
+
+	
+void SearchObject::MoveSearch(void)
+{
+	MapClass::_vMap temp = map->GetVMap();
+	D2D_POINT_2L id = actor->GetId();
+	D2D_POINT_2F pos = actor->GetPos();
+	D2D_SIZE_F offset = actor->GetOffset();
+
+	RymBusPointMake(actor->GetPos(), rymPos, { offset.width * size, offset.height * size });
+	int _sizeX = size * 0.5f;
+	int _sizeY = size * 0.5f;
+
+	int _x = 0;
+	int _y = 0;
+	float scale = 0.25f;
+
+	for (UINT y = 0; y < vMoveSearch.size(); y++)
+	{
+		int ty = y - _sizeY;
+		_x = y;
+		_x = -_x;
+		_y = (y + 1) - vMoveSearch.size();
+		for (UINT x = 0; x < vMoveSearch[y].size(); x++)
+		{
+			int tx = x - _sizeX;
+
+			if (id.x + tx < 0 || 
+				id.y + ty < 0 ||
+				id.x + tx >= (int)temp.size() ||
+				id.y + ty >= (int)temp.size())
+			{
+				vMoveSearch[y][x].isInISO = true;
+				vMoveSearch[y][x].pos.x = pos.x + ((offset.width * 0.5f) * _x);
+				vMoveSearch[y][x].pos.y = pos.y + ((offset.height * 0.27f) * _y);
+				RymBusPointMake(vMoveSearch[y][x].pos, vMoveSearch[y][x].rymPos, offset);
+				_x++;
+				_y++;
+				continue;
+			}
+
+			vMoveSearch[y][x].id.x = id.x + tx;
+			vMoveSearch[y][x].id.y = id.y + ty;
+			vMoveSearch[y][x].pos.x = pos.x + ((offset.width * 0.5f) * _x);
+			vMoveSearch[y][x].pos.y = pos.y + ((offset.height * 0.27f) * _y);
+			_x++;
+			_y++;
+
+			RymBusPointMake(vMoveSearch[y][x].pos, vMoveSearch[y][x].rymPos, offset);
+
+			if (ISOInISO(vMoveSearch[y][x].pos,vMoveSearch[y][x].rymPos,
+				temp[id.y + ty][id.x + tx]->GetRymPos())) {
+				if (temp[id.y + ty][id.x + tx]->GetType() == TILE_LIQUDE ||
+					temp[id.y + ty][id.x + tx]->GetType() == TILE_DEFAULT) {
+					vMoveSearch[y][x].isInISO = true;
+				}
+				else vMoveSearch[y][x].isInISO = false;
+			}
+
+			for (UINT i = 0; i < vObjectSearch.size(); i++)
+			{
+				if (ISOInPoint(vMoveSearch[y][x].pos, vObjectSearch[i]->GetRymPos())) {
+					if (vObjectSearch[i]->GetKind() == MATTER) {
+						vMoveSearch[y][x].isInISO = true;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+void AStar::ObjectSearch(void)
+{
+	D2D_POINT_2F* rymPos = actor->GetSearch()->GetRymPos();
+	vector<GameObject*> vObject = actor->GetSearch()->GetVObjectSearch();
+
+	if (vObject.empty()) {
+		target = nullptr;
+	}
+	else {
+		for (UINT i = 0; i < vObject.size(); i++)
+		{
+			if (vObject[i]->GetKind() == ACTOR) {
+				if (dynamic_cast<Actor*>(vObject[i])->GetActorKind() == PLAYER) {
+					if (!target) {
+						findEnd = false;
+						pathResult.clear();
+					}
+					target = dynamic_cast<Actor*>(vObject[i]);
+					break;
+				}
+				else target = nullptr;
+			}
+			else target = nullptr;
+		}
+	}
+
+	if (target == nullptr) return;
+
+	for (UINT y = 0; y < vSearch.size(); y++)
+	{
+		for (UINT x = 0; x < vSearch[y].size(); x++)
+		{
+			if (ISOInPoint(target->GetPos(), vSearch[y][x].rymPos)) {
+				destId.x = x;
+				destId.y = y;
+				return;
+			}
+		}
+	}
+}
+
+void AStar::FindStart(vector<vector<SearchObject::SearchIt>> vSearch)
+{
+	for (UINT y = 0; y < vSearch.size(); y++)
+	{
+		for (UINT x = 0; x < vSearch[y].size(); x++)
+		{
+			if (vSearch[y][x].id.x == actor->GetId().x &&
+				vSearch[y][x].id.y == actor->GetId().y) {
+
+				start = SetAstarRymbus(vSearch[y][x]);
+				start.sId = { x,y };
+				start.astarType = MOVE_START;
+				start.distance = 0.0f;
+				pathResult.push_back(start);
+				current = start;
+				return;
+			}
+		}
+	}
+}
+
+void AStar::FindEnd(vector<vector<SearchObject::SearchIt>> vSearch)
+{
+	if (!target) {
+		while (true) {
+			destId.y = GetRandomInt(0, vSearch.size() - 1);
+			destId.x = GetRandomInt(0, vSearch[destId.y].size() - 1);
+
+			if (destId.x == start.sId.x && destId.y == start.sId.y) continue;
+			if (!vSearch[destId.y][destId.x].isInISO) break;
+		}
+	}
+
+	end = SetAstarRymbus(vSearch[destId.y][destId.x]);
+	end.sId = { destId.x, destId.y };
+	end.astarType = MOVE_END;
+	end.distance = 0.0f;
+	findEnd = true;
+}
+
+void AStar::PathFinder(vector<vector<SearchObject::SearchIt>> vSearch)
+{
+	if (!findEnd) {
+		FindStart(vSearch);
+		FindEnd(vSearch);
+	}
+
+	if (current.astarType == MOVE_END) {
+		return;
+	}
+
+	vector<Astar_Rymbus> vReady;
+	vReady.clear();
+
+	for (int y = -1; y < 2; y++)
+	{
+		for (int x = -1; x < 2; x++)
+		{
+			if (current.sId.y + y <= 0 ||
+				current.sId.x + x <= 0 ||
+				current.sId.y + y >= vSearch.size() ||
+				current.sId.x + x >= vSearch.size())
+				continue;
+
+			if (vSearch[current.sId.y + y][current.sId.x + x].isInISO) continue;
+			if (start.sId.x == current.sId.x + x && start.sId.y == current.sId.y + y) continue;
+			if (x == 0 && y == 0) continue;
+
+			Astar_Rymbus node = SetAstarRymbus(vSearch[current.sId.y + y][current.sId.x + x]);
+			node.sId.x = current.sId.x + x;
+			node.sId.y = current.sId.y + y;
+			if (node.sId.x == end.sId.x && node.sId.y == end.sId.y) node.astarType = MOVE_END;
+
+			if ((y == 0 && x == 0) || (y == 0 && x == 2) || (y == 2 && x == 0) || (y == 2 && x == 2)) {
+				node.distance = GetDistance(node.sId.x, node.sId.y, end.sId.x, end.sId.y) + 1;
+			}
+			else node.distance = GetDistance(node.sId.x, node.sId.y, end.sId.x, end.sId.y);
+
+			vReady.push_back(node);
+		}
+	}
+
+	if (vReady.empty()) return;
+
+	SortPath(vReady, 0, vReady.size() - 1);
+
+	for (UINT i = 0; i < vReady.size(); i++)
+	{
+		if (vReady[i].astarType == MOVE_END) {
+			Astar_Rymbus temp = vReady[i];
+			vReady[i] = vReady[0];
+			vReady[0] = temp;
+			break;
+		}
+	}
+
+	for (UINT i = 0; i < pathResult.size(); i++)
+	{
+		if (pathResult[i].sId.x == vReady[0].sId.x &&
+			pathResult[i].sId.y == vReady[0].sId.y)
+			return;
+	}
+
+	pathResult.push_back(vReady[0]);
+	current = vReady[0];
+
+	PathFinder(vSearch);
+}
+
+void AStar::SortPath(vector<Astar_Rymbus>& vReady, int start, int end)
+{
+	if (start >= end) return;
+
+	int pivot = start;
+	int lStart = pivot + 1;
+	int rStart = end;
+	Astar_Rymbus temp;
+
+	while (lStart <= rStart) {
+
+		while (lStart <= end &&
+			vReady[lStart].distance <= vReady[pivot].distance) {
+			lStart++;
+		}
+
+		while (rStart > start &&
+			vReady[rStart].distance >= vReady[pivot].distance) {
+			rStart--;
+		}
+
+		if (lStart > rStart) {
+			temp = vReady[rStart];
+			vReady[rStart] = vReady[pivot];
+			vReady[pivot] = temp;
+		}
+		else {
+			temp = vReady[lStart];
+			vReady[lStart] = vReady[pivot];
+			vReady[pivot] = temp;
+		}
+	}
+
+	SortPath(vReady, start, rStart - 1);
+	SortPath(vReady, rStart + 1, end);
+}
+
+void AStar::Render(void)
+{
+	for (UINT i = 0; i < pathResult.size(); i++)
+	{
+		if (pathResult[i].astarType == MOVE_START) {
+			_RenderTarget->DrawLine({pathResult[i].rymPos[0].x + _CAM->x, pathResult[i].rymPos[0].y + _CAM->y}, { pathResult[i].rymPos[1].x + _CAM->x, pathResult[i].rymPos[1].y + _CAM->y }, _BRUSH->GetBrush("RED"));
+			_RenderTarget->DrawLine({pathResult[i].rymPos[0].x + _CAM->x, pathResult[i].rymPos[0].y + _CAM->y}, { pathResult[i].rymPos[3].x + _CAM->x, pathResult[i].rymPos[3].y + _CAM->y }, _BRUSH->GetBrush("RED"));
+			_RenderTarget->DrawLine({pathResult[i].rymPos[1].x + _CAM->x, pathResult[i].rymPos[1].y + _CAM->y}, { pathResult[i].rymPos[2].x + _CAM->x, pathResult[i].rymPos[2].y + _CAM->y }, _BRUSH->GetBrush("RED"));
+			_RenderTarget->DrawLine({pathResult[i].rymPos[2].x + _CAM->x, pathResult[i].rymPos[2].y + _CAM->y}, { pathResult[i].rymPos[3].x + _CAM->x, pathResult[i].rymPos[3].y + _CAM->y }, _BRUSH->GetBrush("RED"));
+		}
+		else if (pathResult[i].astarType == MOVE_END) {
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[0].x + _CAM->x, pathResult[i].rymPos[0].y + _CAM->y }, { pathResult[i].rymPos[1].x + _CAM->x, pathResult[i].rymPos[1].y + _CAM->y }, _BRUSH->GetBrush("BLUE"));
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[0].x + _CAM->x, pathResult[i].rymPos[0].y + _CAM->y }, { pathResult[i].rymPos[3].x + _CAM->x, pathResult[i].rymPos[3].y + _CAM->y }, _BRUSH->GetBrush("BLUE"));
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[1].x + _CAM->x, pathResult[i].rymPos[1].y + _CAM->y }, { pathResult[i].rymPos[2].x + _CAM->x, pathResult[i].rymPos[2].y + _CAM->y }, _BRUSH->GetBrush("BLUE"));
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[2].x + _CAM->x, pathResult[i].rymPos[2].y + _CAM->y }, { pathResult[i].rymPos[3].x + _CAM->x, pathResult[i].rymPos[3].y + _CAM->y }, _BRUSH->GetBrush("BLUE"));
+		}
+		else {
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[0].x + _CAM->x, pathResult[i].rymPos[0].y + _CAM->y }, { pathResult[i].rymPos[1].x + _CAM->x, pathResult[i].rymPos[1].y + _CAM->y }, _Device->pDefaultBrush);
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[0].x + _CAM->x, pathResult[i].rymPos[0].y + _CAM->y }, { pathResult[i].rymPos[3].x + _CAM->x, pathResult[i].rymPos[3].y + _CAM->y }, _Device->pDefaultBrush);
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[1].x + _CAM->x, pathResult[i].rymPos[1].y + _CAM->y }, { pathResult[i].rymPos[2].x + _CAM->x, pathResult[i].rymPos[2].y + _CAM->y }, _Device->pDefaultBrush);
+			_RenderTarget->DrawLine({ pathResult[i].rymPos[2].x + _CAM->x, pathResult[i].rymPos[2].y + _CAM->y }, { pathResult[i].rymPos[3].x + _CAM->x, pathResult[i].rymPos[3].y + _CAM->y }, _Device->pDefaultBrush);
+		}
+	
+		//WCHAR idString[256];
+		//static TCHAR idText[] = L"%d";
+		//_stprintf_s(idString, idText, i);
+		//_FONT->Render(idString, FRectMakeCenter(pathResult[i].pos.x, pathResult[i].pos.y, 30, 30));
+	}
+
+	//if (target) {
+	//	_RenderTarget->DrawLine(target->GetRymPos()[0], target->GetRymPos()[1], _Device->pDefaultBrush);
+	//	_RenderTarget->DrawLine(target->GetRymPos()[0], target->GetRymPos()[3], _Device->pDefaultBrush);
+	//	_RenderTarget->DrawLine(target->GetRymPos()[1], target->GetRymPos()[2], _Device->pDefaultBrush);
+	//	_RenderTarget->DrawLine(target->GetRymPos()[2], target->GetRymPos()[3], _Device->pDefaultBrush);
+	//}
+}
+
+if (vTotalPath.empty()) {
+		FindBattleMovePath();
+	}
+
+	if (end == nullptr) {
+		FindEnd();
+	}
+
+	if (end != nullptr) {
+		if (vPathResult.empty()) {
+			PathFinder(current);
+		}
+		CheckEnd();
+	}
+
+	if (actor->GetActorKind() == MONSTER) {
+		D2D_POINT_2L destId;
+		if (FindObject()) {
+			destId.y = start->id.y + (target->GetId().y - actor->GetId().y);
+			destId.x = start->id.x + (target->GetId().x - actor->GetId().x);
+
+			if (destId.y < 0) {
+				destId.y = 0;
+			}
+			else if (destId.y >= vTotalPath.size()) {
+				destId.y = vTotalPath.size() - 1;
+			}
+
+			if (destId.x < 0) {
+				destId.x = 0;
+			}
+			else if (destId.x >= vTotalPath.size()) {
+				destId.y = vTotalPath.size() - 1;
+			}
+		}
+		else
+		{
+			while (true) {
+				destId.y = GetRandomInt(0, vTotalPath.size() - 1);
+				destId.x = GetRandomInt(0, vTotalPath[destId.y].size() - 1);
+
+				if (destId.y == start->id.y && destId.x == start->id.x) continue;
+				if (vTotalPath[destId.y][destId.x].isOpen) break;
+			}
+		}
+
+		vTotalPath[destId.y][destId.x].astarType = MOVE_END;
+		end = &vTotalPath[destId.y][destId.x];
+	}
+	else if (actor->GetActorKind() == PLAYER) {
+		
+		for (UINT y = 0; y < vTotalPath.size(); y++)
+		{
+			for (UINT x = 0; x < vTotalPath[y].size(); x++)
+			{
+				if (MouseInISO(vTotalPath[y][x].rymPos)) {
+					if (!vTotalPath[y][x].isOpen) continue;
+					vTotalPath[y][x].astarType = MOVE_END;
+					end = &vTotalPath[y][x];
+					return;
+				}
+			}
+		}
+	}
+}

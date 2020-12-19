@@ -1,0 +1,12 @@
+NAME	IDX	IDY	OFFSETX	OFFSETY	FRAMEX	FRAMEY	TYPE	KIND	TYPENAME	OBJECTKIND	MONPROPERTIES
+지우르	24	43	64.000000	57.000000	3	0	1	0	class Actor *	1	0
+지우르	24	47	64.000000	57.000000	0	0	1	0	class Actor *	1	0
+지우르	25	39	64.000000	57.000000	2	0	1	0	class Actor *	1	0
+Tree_Needeled_Middle	25	33	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	26	25	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	33	41	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	39	40	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	42	32	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	35	24	64.000000	57.000000	1	0	1	1	class Matter *	1
+Tree_Needeled_Middle	28	21	64.000000	57.000000	1	0	1	1	class Matter *	1
+/
